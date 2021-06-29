@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class = "container">
+
+    <h1 class="display-4">Coronavirus Tracker Application(Korea)</h1>
+    <p class="lead">한국의 코로나19 현황</p>
+
+    <table class= "table">
+        <thead>
+            <tr>
+                <th rowspan="2" style="text-align:center; line-height:1.5em; border-right:1px solid #dee2e6; vertical-align: middle;">지역</th>
+                <th colspan="3">전일대비확진환자 증감</th>
+                <th colspan="3">확진환자 (명)</th>
+            </tr>
+            <tr>
+                <th>합계</th>
+                <th>국내발생</th>
+                <th>해외유입</th>
+                <th>확진환자</th>
+                <th>사망자</th>
+                <th>발생률 (*)</th>
+            </tr>
+        </thead>
+        <tr th:each = "info : ${info} ">
+            <td th:text = "${info.country}"></td>
+            <td th:text = "${info.diffFromPrevDay}">0</td>
+            <td th:text = "${info.domesticPrevDay}">0</td>
+            <td th:text = "${info.overseasPrevDay}">0</td>
+            <td th:text = "${info.total}">0</td>
+            <td th:text = "${info.death}">0</td>
+            <td th:text = "${info.incidence}">0</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
