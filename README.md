@@ -1,2 +1,2 @@
 # covid19-status-crawling
-국내 코로나 정보 크롤링하기
+Jsoup을 이용하여 국내 코로나 정보 크롤링하기
