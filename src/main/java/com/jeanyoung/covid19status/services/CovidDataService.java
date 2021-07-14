@@ -29,8 +29,8 @@ public class CovidDataService {
 
             KoreaStatus koreaStatus = KoreaStatus.builder()
                     .country(content.select("th").text())
-                    .diffFromPrevDay(Integer.parseInt(td.get(0).text()))
-                    .domesticPrevDay(Integer.parseInt(td.get(1).text()))
+                    .diffFromPrevDay(Integer.parseInt(td.get(0).text().replaceAll(",", "")))
+                    .domesticPrevDay(Integer.parseInt(td.get(1).text().replaceAll(",", "")))
                     .overseasPrevDay(Integer.parseInt(td.get(2).text()))
                     .total(Integer.parseInt(td.get(3).text().replaceAll(",", "")))
                     .death(Integer.parseInt(td.get(6).text().replaceAll(",", "")))

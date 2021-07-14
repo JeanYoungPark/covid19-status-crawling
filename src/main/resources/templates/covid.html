@@ -31,11 +31,11 @@
         </thead>
         <tr th:each = "info : ${info} ">
             <td th:text = "${info.country}"></td>
-            <td th:text = "${info.diffFromPrevDay}">0</td>
-            <td th:text = "${info.domesticPrevDay}">0</td>
+            <td th:text = "${#numbers.formatDecimal(info.diffFromPrevDay, 0, 'COMMA', 0, 'POINT')}">0</td>
+            <td th:text = "${#numbers.formatDecimal(info.domesticPrevDay, 0, 'COMMA', 0, 'POINT')}">0</td>
             <td th:text = "${info.overseasPrevDay}">0</td>
-            <td th:text = "${info.total}">0</td>
-            <td th:text = "${info.death}">0</td>
+            <td th:text = "${#numbers.formatDecimal(info.total, 0, 'COMMA', 0, 'POINT')}">0</td>
+            <td th:text = "${#numbers.formatDecimal(info.death, 0, 'COMMA', 0, 'POINT')}">0</td>
             <td th:text = "${info.incidence}">0</td>
         </tr>
     </table>
